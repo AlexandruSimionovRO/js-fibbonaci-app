@@ -1,0 +1,3 @@
+# js-fibonacci-app
+The purpose of this project is to show how to build a multi container application. It will be a simple web application that calculates the Fibonacci value at a particular index given by the user. "Docker Compose" is the tool we need for running multi-container Docker applications.
+![alt-text](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d6547362-b3c3-428d-ae4f-596a037cdb0d/Diagrama.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210118T081946Z&X-Amz-Expires=86400&X-Amz-Signature=400c9b0d494340975c84a335552d86ff1badb5c1af0f48bd57597f0df640f69e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Diagrama.png%22)
