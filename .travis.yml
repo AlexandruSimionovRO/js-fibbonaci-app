@@ -4,24 +4,24 @@ services:
 
 before_install:
   # Build Test version of Fibonacci App Project
-  - docker build -t AlexandruSimionovRO/js-fibonacci-app-test -f ./client/Dockerfile.dev ./client 
+  - docker build -t alexandrusimionovro/js-fibonacci-app-test -f ./client/Dockerfile.dev ./client 
 script:
-  - docker run -e CI=true AlexandruSimionovRO/js-fibonacci-app-test npm test
+  - docker run -e CI=true alexandrusimionovro/js-fibonacci-app-test npm test
 
 after_success:
   # Build Production versions
-  - docker build -t  AlexandruSimionovRO/js-fibonacci-app-client ./client
-  - docker build -t  AlexandruSimionovRO/js-fibonacci-app-nginx ./nginx
-  - docker build -t  AlexandruSimionovRO/js-fibonacci-app-server ./server
-  - docker build -t  AlexandruSimionovRO/js-fibonacci-app-worker ./worker
+  - docker build -t  alexandrusimionovro/js-fibonacci-app-client ./client
+  - docker build -t  alexandrusimionovro/js-fibonacci-app-nginx ./nginx
+  - docker build -t  alexandrusimionovro/js-fibonacci-app-server ./server
+  - docker build -t  alexandrusimionovro/js-fibonacci-app-worker ./worker
   
   # Log in to the Docker CLI
   # Declare env variables on Travis-CI.com --> Project Build --> Settings
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
 
   #Take those images and push them to DockerHub
-  - docker push AlexandruSimionovRO/js-fibonacci-app-client
-  - docker push AlexandruSimionovRO/js-fibonacci-app-nginx
-  - docker push AlexandruSimionovRO/js-fibonacci-app-server
-  - docker push AlexandruSimionovRO/js-fibonacci-app-worker
+  - docker push alexandrusimionovro/js-fibonacci-app-client
+  - docker push alexandrusimionovro/js-fibonacci-app-nginx
+  - docker push alexandrusimionovro/js-fibonacci-app-server
+  - docker push alexandrusimionovro/js-fibonacci-app-worker
 
