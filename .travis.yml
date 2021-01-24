@@ -19,7 +19,7 @@ after_success:
   # Declare env variables on Travis-CI.com --> Project Build --> Settings
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
 
-  #Take those images and push them to DockerHub #
+  #Take those images and push them to DockerHub ###
   - docker push alexandrusimionovro/js-fibonacci-app-client
   - docker push alexandrusimionovro/js-fibonacci-app-nginx
   - docker push alexandrusimionovro/js-fibonacci-app-server
