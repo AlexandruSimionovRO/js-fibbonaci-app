@@ -19,21 +19,21 @@ after_success:
   # Declare env variables on Travis-CI.com --> Project Build --> Settings
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
 
-  #Take those images and push them to DockerHub ###
+  #Take those images and push them to DockerHub #
   - docker push alexandrusimionovro/js-fibonacci-app-client
   - docker push alexandrusimionovro/js-fibonacci-app-nginx
   - docker push alexandrusimionovro/js-fibonacci-app-server
   - docker push alexandrusimionovro/js-fibonacci-app-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: 'eu-west-2'
-    app: 'js-fibonacci-app'
-    env: 'JsFibonacciApp-env'
-    bucket_name: 'elasticbeanstalk-eu-west-2-945523477108'
-    bucket_path: 'js-fibonacci-app'
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-2'
+  app: 'js-fibonacci-app'
+  env: 'JsFibonacciApp-env'
+  bucket_name: 'elasticbeanstalk-eu-west-2-945523477108'
+  bucket_path: 'js-fibonacci-app'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 
